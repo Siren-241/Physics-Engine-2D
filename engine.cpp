@@ -15,7 +15,6 @@ const COLORREF bgcol = 0x0f0f10;
 
 int main()
 {
-    //sdfs
     //window declaration
     int gd=DETECT, gm;
     initgraph(&gd, &gm, (char *)"");
