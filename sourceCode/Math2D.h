@@ -8,10 +8,12 @@
 class Vec2
 {   
     private:
-        float x, y;
-    
+        float *x = new float;
+        float *y = new float;
+            
     public:
         Vec2();
+        ~Vec2();
         Vec2(float);
         Vec2(float, float);
 
