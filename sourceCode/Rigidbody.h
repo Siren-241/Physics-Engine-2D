@@ -41,8 +41,5 @@ class Rigidbody
 
 };
 
-//needs to be rewritten
-void findNormal(Rigidbody*, Rigidbody*, Vec2*, float*);
-
 
 #endif

@@ -160,7 +160,6 @@ static void gameLoop()
         delay(5);
 
         deltaTime = std::chrono::high_resolution_clock::now() - startTime;
-        //cout<<fps<<endl;
 
 
 

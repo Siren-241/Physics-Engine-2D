@@ -65,12 +65,3 @@ void Rigidbody::MoveTo(Vec2 des)
 {
     this->pos = des;
 }
-
-void findNormal(Rigidbody *r1, Rigidbody *r2, Vec2 *normal, float *dist)
-{
-    //rough aprroximation: Redo required
-    *normal = r2->getPos() - r1->getPos();
-    *dist = (r2->signedDistFunc(r1->getPos())+r1->signedDistFunc(r2->getPos())-normal->mag());
-    normal->normalise();
-    
-}

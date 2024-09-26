@@ -32,10 +32,4 @@ class Vec2
 
 };
 
-Vec2 abs(Vec2);
-Vec2 rotmat2x2(Vec2, float);
-float max(float, float);
-float min(float, float);
-
-
 #endif
