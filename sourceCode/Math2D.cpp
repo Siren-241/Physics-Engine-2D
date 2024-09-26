@@ -5,11 +5,6 @@ Vec2::Vec2()
     *this->x = 0;
     *this->y = 0;
 }
-Vec2::~Vec2()
-{
-    delete x;
-    delete y;
-}
 Vec2::Vec2(float s)
 {
     *this->x = s;
@@ -20,6 +15,11 @@ Vec2::Vec2(float _x, float _y)
     *this->x = _x;
     *this->y = _y;
 }
+Vec2::~Vec2()
+{
+    delete this->x;
+    delete this->y;
+}
 
 Vec2 Vec2::operator+(Vec2 v)
 {
@@ -28,17 +28,17 @@ Vec2 Vec2::operator+(Vec2 v)
 }
 Vec2 Vec2::operator-(Vec2 v)
 {
-    Vec2 temp(this->x-v.x,this->y-v.y);
+    Vec2 temp( *this->x - v.getX(), *this->y - v.getY());
     return temp;
 }
 Vec2 Vec2::operator*(float s)
 {
-    Vec2 temp(*this->x * s, *this->y * s);
+    Vec2 temp((*this->x) * s, (*this->y) * s);
     return temp;
 }
 Vec2 Vec2::operator/(float s)
 {
-    Vec2 temp(*this->x/s, *this->y/s);
+    Vec2 temp((*this->x) / s, (*this->y) / s);
     return temp;
 }
 

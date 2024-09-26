@@ -7,7 +7,7 @@ Vec2 Rigidbody::getPos()
 }
 void Rigidbody::setPos(Vec2 v)
 {
-    this->pos = v;
+    this->pos.setTo(v);
 }
 float Rigidbody::getX()
 {
@@ -52,7 +52,7 @@ void Rigidbody::Move(Vec2 s)
 {
     if(!this->isStatic)
     {
-        this->pos = this->pos + s;
+        this->pos.setTo(this->pos + s);
     }
     else
     {
@@ -60,8 +60,3 @@ void Rigidbody::Move(Vec2 s)
     }
 }
 
-
-void Rigidbody::MoveTo(Vec2 des)
-{
-    this->pos = des;
-}

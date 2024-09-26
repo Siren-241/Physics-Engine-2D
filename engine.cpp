@@ -40,11 +40,12 @@ static void gameLoop()
     std::chrono::duration<double> deltaTime;
     char fps[50];
 
+    Rigidbody *objects[2];
+    int len = sizeof(objects)/sizeof(objects[0]);
+
     unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
     std::minstd_rand0 generator(seed);
 
-    Rigidbody *objects[2];
-    int len = sizeof(objects)/sizeof(objects[0]);
 
     Ball b(400, 200, 50);
     Rect r(200, 200, 75, 75);
@@ -52,8 +53,6 @@ static void gameLoop()
     objects[0] = &b;
     objects[1] = &r;
 
-    objects[0]->isStatic = false;
-    objects[1]->isStatic = false;
     Vec2 mousePos;
 
 
@@ -143,13 +142,11 @@ static void gameLoop()
         }
             
         
-        
-
-
-
 
         //Print out Fps on the screen
         sprintf(fps, "%d", (int)(1/(double)deltaTime.count()));
+        //char info[10] =  "FPS: ";
+        //strcat(info, fps);
         outtextxy(getmaxx()-30, 10, (char *)fps);
 
 

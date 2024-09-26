@@ -1,5 +1,4 @@
 #include "objects.h"
-#include "Math2D.h"
 
 
 //sdfs
@@ -98,12 +97,12 @@ Ball::Ball(int _x, int _y, float _r, int _col)
 */
 void Rect::draw()
 {
-    for (int i = getPos().getX() - width; i < getPos().getX() + width; i++)
+    for (int i = this->getX() - width; i < this->getX() + width; i++)
     {
-        for (int j = getPos().getY() - height; j < getPos().getY() + height; j++)
+        for (int j = this->getY() - height; j < this->getY() + height; j++)
         {
             Vec2 p = Vec2(i,j);
-            float d = (signedDistFunc(p));
+            float d = (this->signedDistFunc(p));
             if (d < 1)
             {
                 putpixel(p.getX() ,p.getY(), WHITE);

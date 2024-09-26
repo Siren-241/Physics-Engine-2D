@@ -2,6 +2,8 @@
 #define OBJECTS_H
 
 #include "Rigidbody.h"
+#include "Math2D.h"
+#include "utils.h"
 
 class Rect : public Rigidbody
 {
@@ -48,4 +50,4 @@ class Ball : public Rigidbody
 
 
 
-#endif
+#endif// OBJECTS_H

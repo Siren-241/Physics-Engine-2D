@@ -8,14 +8,14 @@
 class Vec2
 {   
     private:
-        float *x = new float;
-        float *y = new float;
+        float *x;
+        float *y;
             
     public:
         Vec2();
-        ~Vec2();
         Vec2(float);
         Vec2(float, float);
+        ~Vec2();
 
         Vec2 operator+(Vec2);
         Vec2 operator-(Vec2);
@@ -32,4 +32,4 @@ class Vec2
 
 };
 
-#endif
+#endif //MATH2D_H

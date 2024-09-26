@@ -23,7 +23,6 @@ class Rigidbody
 
         //Pos operations
         void Move(Vec2);
-        void MoveTo(Vec2);
         Vec2 getPos();
         void setPos(Vec2);
         float getX();
@@ -42,4 +41,4 @@ class Rigidbody
 };
 
 
-#endif
+#endif// RIGIDBODY_H
