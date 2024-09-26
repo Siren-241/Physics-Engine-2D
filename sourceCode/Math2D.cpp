@@ -2,50 +2,50 @@
 
 Vec2::Vec2()
 {
-    *this->x = 0;
-    *this->y = 0;
+    this->x = 0;
+    this->y = 0;
 }
 Vec2::Vec2(float s)
 {
-    *this->x = s;
-    *this->y = s;
+    this->x = s;
+    this->y = s;
 }
 Vec2::Vec2(float _x, float _y)
 {
-    *this->x = _x;
-    *this->y = _y;
+    this->x = _x;
+    this->y = _y;
 }
 Vec2::~Vec2()
 {
-    delete this->x;
-    delete this->y;
+    /* delete this->x;
+    delete this->y; */
 }
 
 Vec2 Vec2::operator+(Vec2 v)
 {
-    Vec2 temp( *this->x + v.getX(), *this->y + v.getY());
+    Vec2 temp( this->x + v.getX(), this->y + v.getY());
     return temp;
 }
 Vec2 Vec2::operator-(Vec2 v)
 {
-    Vec2 temp( *this->x - v.getX(), *this->y - v.getY());
+    Vec2 temp( this->x - v.getX(), this->y - v.getY());
     return temp;
 }
 Vec2 Vec2::operator*(float s)
 {
-    Vec2 temp((*this->x) * s, (*this->y) * s);
+    Vec2 temp((this->x) * s, (this->y) * s);
     return temp;
 }
 Vec2 Vec2::operator/(float s)
 {
-    Vec2 temp((*this->x) / s, (*this->y) / s);
+    Vec2 temp((this->x) / s, (this->y) / s);
     return temp;
 }
 
 
 float Vec2::mag()
 {
-    return sqrt( (*this->x) * (*this->x) + (*this->y) * (*this->y) ); 
+    return sqrt( (this->x) * (this->x) + (this->y) * (this->y) ); 
 }
 
 void Vec2::normalise()
@@ -53,25 +53,25 @@ void Vec2::normalise()
     float tempM = mag();
     if(tempM!=0)
     {
-        *this->x /= tempM;
-        *this->y /= tempM;
+        this->x /= tempM;
+        this->y /= tempM;
     }
 }
 Vec2 Vec2::getPos()
 {
-    return Vec2(*this->x, *this->y);
+    return Vec2(this->x, this->y);
 }
 float Vec2::getX()
 {
-    return *this->x;
+    return this->x;
 }
 float Vec2::getY()
 {
-    return *this->y;
+    return this->y;
 }
 void Vec2::setTo(Vec2 temp)
 {
-    *this->x = temp.getX();
-    *this->y = temp.getY();
+    this->x = temp.getX();
+    this->y = temp.getY();
 }
 
