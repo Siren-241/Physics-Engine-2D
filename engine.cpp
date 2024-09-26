@@ -7,6 +7,7 @@
 #include "sourceCode/Math2D.h"
 #include "sourceCode/Rigidbody.h"
 #include "sourceCode/objects.h"
+#include "sourceCode/utils.h"
 #include "Scene.h"
 
 static void gameLoop();
