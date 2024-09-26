@@ -13,6 +13,7 @@
                 "${workspaceFolder}\\sourceCode\\Math2D.cpp",
                 "${workspaceFolder}\\sourceCode\\Rigidbody.cpp",
                 "${workspaceFolder}\\sourceCode\\objects.cpp",
+                "${workspaceFolder}\\sourceCode\\Scene.cpp",
 
                 "-o",
                 "${fileDirname}\\engine.exe",
