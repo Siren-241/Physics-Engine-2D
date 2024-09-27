@@ -1,6 +1,5 @@
 #include "Rigidbody.h"
 
-
 Vec2 Rigidbody::getPos()
 {
     return this->pos;

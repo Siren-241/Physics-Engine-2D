@@ -31,7 +31,9 @@ class Rigidbody
         //angle operations
         float getAngle();
         void setAngle(float);
+        //dont use yet
         void rotateByRad(float);
+        //dont use yet
         void rotateByDeg(float);
 
         virtual float signedDistFunc(Vec2)=0;

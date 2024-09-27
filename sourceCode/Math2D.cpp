@@ -23,23 +23,19 @@ Vec2::~Vec2()
 
 Vec2 Vec2::operator+(Vec2 v)
 {
-    Vec2 temp( this->x + v.getX(), this->y + v.getY());
-    return temp;
+    return Vec2( this->x + v.getX(), this->y + v.getY());
 }
 Vec2 Vec2::operator-(Vec2 v)
 {
-    Vec2 temp( this->x - v.getX(), this->y - v.getY());
-    return temp;
+    return Vec2( this->x - v.getX(), this->y - v.getY());
 }
 Vec2 Vec2::operator*(float s)
 {
-    Vec2 temp((this->x) * s, (this->y) * s);
-    return temp;
+    return Vec2((this->x) * s, (this->y) * s);
 }
 Vec2 Vec2::operator/(float s)
 {
-    Vec2 temp((this->x) / s, (this->y) / s);
-    return temp;
+    return Vec2((this->x) / s, (this->y) / s);
 }
 
 

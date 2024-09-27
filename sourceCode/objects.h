@@ -9,43 +9,44 @@ class Rect : public Rigidbody
 {
     //params
     private:
-    int p_arr[10];
+        int p_arr[10];
+        float width, height;
 
     public:
-    float width, height;
 
-    //sdf 
-    float signedDistFunc(Vec2 p);
-    
-    //draw Funcs
-    //void draw();
-    void draw();
-    void draw(int _col);
+        //sdf 
+        float signedDistFunc(Vec2 p);
+        
+        //draw Funcs
+        //void draw();
+        void draw();
+        void draw(int _col);
 
-    //constructors
-    Rect();
-    Rect(float _w, float _h);
-    Rect(int _x, int _y, float _w, float _h);
+        //constructors
+        Rect();
+        Rect(float _w, float _h);
+        Rect(int _x, int _y, float _w, float _h);
 
 };
 
 class Ball : public Rigidbody
 {
-    public:
     //Parameters
-    float r;
+    private:
+        float r;
 
-    //sdf
-    float signedDistFunc(Vec2 p);
+    public:
+        //sdf
+        float signedDistFunc(Vec2 p);
 
-    //draw Funcs
-    void draw();
-    void draw(int _col);
+        //draw Funcs
+        void draw();
+        void draw(int _col);
 
-    //constructors
-    Ball();
-    Ball(int _x, int _y, float _r);
-    Ball(int _x, int _y, float _r, int _col);
+        //constructors
+        Ball();
+        Ball(int _x, int _y, float _r);
+        Ball(int _x, int _y, float _r, int _col);
 };
 
 

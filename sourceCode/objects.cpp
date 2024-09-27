@@ -1,6 +1,5 @@
 #include "objects.h"
 
-
 //sdfs
 float Rect::signedDistFunc(Vec2 p)
 {
