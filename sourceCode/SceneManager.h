@@ -7,9 +7,9 @@
 
 class Scene
 {
+    public:
     std::vector<Rigidbody*> unique_objects_array;
 
-    public:
         void SceneInit(std::vector<Rigidbody*>*);
         void drawScene();
         float sceneSDF(Vec2);

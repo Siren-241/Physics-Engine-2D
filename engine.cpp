@@ -19,6 +19,7 @@ void displayCorrection();
 //void drawObjects(Rigidbody*[], int);
 void displayFPS(char*, std::chrono::duration<double>);
 Vec2 findNormal(Vec2);
+float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
 
 
@@ -52,9 +53,11 @@ static void gameLoop()
 
     //unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
     //std::minstd_rand0 generator(seed);
-    Rect b1(getmaxx()/2, getmaxy()/2 ,100, 200);
+    Ball b1(getmaxx()/2, getmaxy() ,50);
+    Rect r1(getmaxx()/2, getmaxy()/2 ,100, 50);
     std::vector<Rigidbody*> objs;
     objs.push_back(&b1);
+    objs.push_back(&r1);
     
 
     Vec2 mousePos;
@@ -76,7 +79,7 @@ static void gameLoop()
         int speed = 5;
         Vec2 dir = readWASDInputs();
 
-        //sampleScene::unique_objects_array.at(0)->Move(dir*speed);
+        sampleScene.unique_objects_array.at(0)->Move(dir*speed);
 
         //debug mouse sdf
         if(GetKeyState(VK_LBUTTON) & 0x8000)
@@ -87,39 +90,70 @@ static void gameLoop()
         }
 
         #if false
-            for (int i = 0; i < len - 1; i++)
+            for (int i = 0; i < sampleScene.unique_objects_array.size() - 1; i++)
             {
-                for (int j = i + 1; j < len; j++)
+                for (int j = i + 1; j < sampleScene.unique_objects_array.size(); j++)
                 {
-                    Vec2 normal = Vec2(1);
-                    float dist = 1;
-
-                    //findNormal(objs[i], objs[j], &normal, &dist);
+                    Vec2 normal = findNormal(sampleScene.unique_objects_array.at(j)->getPos());
+                    float dist = sampleScene.sceneSDF(sampleScene.unique_objects_array.at(j)->getPos());
+                    drawNormals(sampleScene.unique_objects_array.at(j)->getPos());
 
                     if(dist > 0)
                     {
                         break;
                     }
 
-                    if(!sampleScene::objs[i]->isStatic && !sampleScene::objs[j]->isStatic)
+                    if(!sampleScene.unique_objects_array.at(i)->isStatic && !sampleScene.unique_objects_array.at(j)->isStatic)
                     {
-                        sampleScene::objs[j]->Move(normal*abs(dist) * 0.5);
-                        sampleScene::objs[i]->Move(normal*abs(dist) * -0.5);
+                        sampleScene.unique_objects_array.at(j)->Move(normal*abs(dist) * 0.5);
+                        sampleScene.unique_objects_array.at(i)->Move(normal*abs(dist) * -0.5);
                     }
-                    else if(sampleScene::objs[i]->isStatic && !sampleScene::objs[j]->isStatic)
+                    else if(sampleScene.unique_objects_array.at(i)->isStatic && !sampleScene.unique_objects_array.at(j)->isStatic)
                     {
-                        sampleScene::objs[j]->Move(normal*abs(dist) *  1);
+                        sampleScene.unique_objects_array.at(j)->Move(normal*abs(dist) *  1);
                     }
-                    else if(!sampleScene::objs[i]->isStatic && sampleScene::objs[j]->isStatic)
+                    else if(!sampleScene.unique_objects_array.at(i)->isStatic && sampleScene.unique_objects_array.at(j)->isStatic)
                     {
-                        sampleScene::objs[i]->Move(normal*abs(dist) * -1);
+                        sampleScene.unique_objects_array.at(i)->Move(normal*abs(dist) * -1);
                     }
                     
                 }
                 
             }
         #endif
+        #if true
+        for (int i = 0; i < sampleScene.unique_objects_array.size(); i++)
+        {
+            for (int j = 0; j < sampleScene.unique_objects_array.size()-1; j++)
+            {
+                Vec2 normal = findNormal(sampleScene.unique_objects_array.at(i)->getPos());
+                float dist = findDistance(
+                    sampleScene.unique_objects_array.at(i),
+                    sampleScene.unique_objects_array.at(j));
+            
+                if(dist > 0)
+                {
+                    break;
+                }
+
+                if(!sampleScene.unique_objects_array.at(i)->isStatic && !sampleScene.unique_objects_array.at(j)->isStatic)
+                {
+                    sampleScene.unique_objects_array.at(j)->Move(normal*abs(dist) * 0.5);
+                    sampleScene.unique_objects_array.at(i)->Move(normal*abs(dist) * -0.5);
+                }
+                else if(sampleScene.unique_objects_array.at(i)->isStatic && !sampleScene.unique_objects_array.at(j)->isStatic)
+                {
+                    sampleScene.unique_objects_array.at(j)->Move(normal*abs(dist) *  1);
+                }
+                else if(!sampleScene.unique_objects_array.at(i)->isStatic && sampleScene.unique_objects_array.at(j)->isStatic)
+                {
+                    sampleScene.unique_objects_array.at(i)->Move(normal*abs(dist) * -1);
+                }
+            }
+            
+        }
         
+        #endif
 
         //Normal testing 
         drawNormals(mousePos);
@@ -203,8 +237,8 @@ void drawNormals(Vec2 _mPos)
     Vec2 _end = findNormal(_mPos);
     _end.normalise();
     _end.setTo(_end * abs(len));
-    printf("%f",_end.mag());
-    printf("\n");
+    //printf("%f",_end.mag());
+    //printf("\n");
     line(getmaxx()/2,getmaxy()/2, getmaxx()/2+_end.getX(),getmaxy()/2+_end.getY());
 }
 
@@ -221,4 +255,9 @@ Vec2 findNormal(Vec2 pos)
     Vec2 temp = v1-v2;
     temp.normalise();
     return temp;
+}
+
+float findDistance(Rigidbody* r1, Rigidbody* r2)
+{
+    
 }
