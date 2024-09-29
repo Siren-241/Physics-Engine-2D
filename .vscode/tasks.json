@@ -14,7 +14,7 @@
                 "${workspaceFolder}\\sourceCode\\Rigidbody.cpp",
                 "${workspaceFolder}\\sourceCode\\objects.cpp",
                 "${workspaceFolder}\\sourceCode\\utils.cpp",
-                "${workspaceFolder}\\Scene.cpp",
+                "${workspaceFolder}\\sourceCode\\SceneManager.cpp",
 
                 "-o",
                 "${fileDirname}\\engine.exe",

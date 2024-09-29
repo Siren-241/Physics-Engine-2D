@@ -63,7 +63,7 @@ Ball::Ball(int _x, int _y, float _r, int _col)
 }
 
 
-/*void Rect::draw()
+void Rect::draw()
 {
     //Point 1
     p_arr[0] = (int)getPos().getX() + (-width*cos(getAngle()) - height*sin(getAngle()))/2;
@@ -90,11 +90,11 @@ Ball::Ball(int _x, int _y, float _r, int _col)
     
     //perimeter
 
-    setfillstyle(1,col);
+    setfillstyle(1,getCol());
     fillpoly(5, p_arr);
 }
-*/
-void Rect::draw()
+
+/* void Rect::draw()
 {
     for (int i = this->getX() - width; i < this->getX() + width; i++)
     {
@@ -104,14 +104,14 @@ void Rect::draw()
             float d = (this->signedDistFunc(p));
             if (d < 1)
             {
-                putpixel(p.getX() ,p.getY(), WHITE);
+                putpixel(p.getX() ,p.getY(), this->getCol());
             }
             
         }
         
     }
     
-}
+ }*/
 void Rect::draw(int _col) 
 {
     //Point 1

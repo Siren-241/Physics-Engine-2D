@@ -16,8 +16,7 @@ float min(float, float);
 
 Vec2 rotmat2x2(Vec2, float);
 
-//Rewrite this shat
-void findNormal(Rigidbody* , Rigidbody* , Vec2* , float*);
+
 
 
 #endif // UTILS_H

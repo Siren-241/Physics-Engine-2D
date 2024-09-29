@@ -3,22 +3,27 @@
 #include <ctime>
 #include <chrono>
 #include <random>
+#include <vector>
 
 #include "sourceCode/Math2D.h"
 #include "sourceCode/Rigidbody.h"
 #include "sourceCode/objects.h"
 #include "sourceCode/utils.h"
-#include "Scene.h"
+#include "sourceCode/SceneManager.h"
 
 const COLORREF BACK_COL = 0x0f0f10;
 static void gameLoop();
 
 Vec2 readWASDInputs();
 void displayCorrection();
-void drawObjects(Rigidbody*[], int);
+//void drawObjects(Rigidbody*[], int);
 void displayFPS(char*, std::chrono::duration<double>);
+Vec2 findNormal(Vec2);
+void drawNormals(Vec2);
+
 
 char fps[50];
+Scene sampleScene;
 
 
 int main()
@@ -44,21 +49,16 @@ static void gameLoop()
     std::chrono::time_point<std::chrono::system_clock> startTime;
     std::chrono::duration<double> deltaTime;
 
-    Rigidbody *objects[2];
-    int len = sizeof(objects)/sizeof(objects[0]);
 
     //unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
     //std::minstd_rand0 generator(seed);
-
-
-    Ball b(400, 200, 50);
-    Rect r(200, 200, 75, 75);
-
-    objects[0] = &b;
-    objects[1] = &r;
+    Rect b1(getmaxx()/2, getmaxy()/2 ,100, 200);
+    std::vector<Rigidbody*> objs;
+    objs.push_back(&b1);
+    
 
     Vec2 mousePos;
-
+    sampleScene.SceneInit(&objs);
 
     //The Loop:
     for(int frame = 0; frame>=0; frame++)
@@ -70,58 +70,59 @@ static void gameLoop()
         clearviewport();
 
         //draw
-        drawObjects(objects, len);
+        sampleScene.drawScene();
+
 
         int speed = 5;
         Vec2 dir = readWASDInputs();
 
-        objects[0]->Move(dir*speed);
+        //sampleScene::unique_objects_array.at(0)->Move(dir*speed);
 
+        //debug mouse sdf
         if(GetKeyState(VK_LBUTTON) & 0x8000)
         {
-            float min_dist = abs(objects[0]->signedDistFunc(mousePos));
-            for(auto obj : objects)
-            {
-                float dist = abs(obj->signedDistFunc(mousePos));
-                if(dist<min_dist)min_dist = dist;
-            }
+            float min_dist = sampleScene.sceneSDF(mousePos);
             circle(mousePos.getX(), mousePos.getY(), min_dist);
             circle(mousePos.getX(), mousePos.getY(), 2);
         }
 
-        for (int i = 0; i < len - 1; i++)
-        {
-            for (int j = i + 1; j < len; j++)
+        #if false
+            for (int i = 0; i < len - 1; i++)
             {
-                Vec2 normal = Vec2(1);
-                float dist = 1;
+                for (int j = i + 1; j < len; j++)
+                {
+                    Vec2 normal = Vec2(1);
+                    float dist = 1;
 
-                findNormal(objects[i], objects[j], &normal, &dist);
+                    //findNormal(objs[i], objs[j], &normal, &dist);
 
-                if(dist > 0)
-                {
-                    break;
-                }
+                    if(dist > 0)
+                    {
+                        break;
+                    }
 
-                if(!objects[i]->isStatic && !objects[j]->isStatic)
-                {
-                    objects[j]->Move(normal*abs(dist) * 0.5);
-                    objects[i]->Move(normal*abs(dist) * -0.5);
-                }
-                else if(objects[i]->isStatic && !objects[j]->isStatic)
-                {
-                    objects[j]->Move(normal*abs(dist) *  1);
-                }
-                else if(!objects[i]->isStatic && objects[j]->isStatic)
-                {
-                    objects[i]->Move(normal*abs(dist) * -1);
+                    if(!sampleScene::objs[i]->isStatic && !sampleScene::objs[j]->isStatic)
+                    {
+                        sampleScene::objs[j]->Move(normal*abs(dist) * 0.5);
+                        sampleScene::objs[i]->Move(normal*abs(dist) * -0.5);
+                    }
+                    else if(sampleScene::objs[i]->isStatic && !sampleScene::objs[j]->isStatic)
+                    {
+                        sampleScene::objs[j]->Move(normal*abs(dist) *  1);
+                    }
+                    else if(!sampleScene::objs[i]->isStatic && sampleScene::objs[j]->isStatic)
+                    {
+                        sampleScene::objs[i]->Move(normal*abs(dist) * -1);
+                    }
+                    
                 }
                 
             }
-            
-        }
-            
+        #endif
         
+
+        //Normal testing 
+        drawNormals(mousePos);
 
         //Print out Fps on the screen
         displayFPS(fps, deltaTime);
@@ -184,7 +185,7 @@ Vec2 readWASDInputs()
     return _dir;
 }
 
-void drawObjects(Rigidbody *_objs[], int _len)
+/* void drawObjects(Rigidbody *_objs[], int _len)
 {
     setlinestyle(0,0,2);
     for (int i = 0; i < _len; i++)
@@ -194,4 +195,30 @@ void drawObjects(Rigidbody *_objs[], int _len)
         sprintf(_tempI, "%d", i);
         outtextxy(_objs[i]->getX(),_objs[i]->getY(), (char *)_tempI);
     }
+}
+ */
+void drawNormals(Vec2 _mPos)
+{
+    float len = sampleScene.sceneSDF(_mPos);
+    Vec2 _end = findNormal(_mPos);
+    _end.normalise();
+    _end.setTo(_end * abs(len));
+    printf("%f",_end.mag());
+    printf("\n");
+    line(getmaxx()/2,getmaxy()/2, getmaxx()/2+_end.getX(),getmaxy()/2+_end.getY());
+}
+
+Vec2 findNormal(Vec2 pos)
+{
+    Vec2 v1 = Vec2(
+        sampleScene.sceneSDF(pos + Vec2(ELIPSON, 0.0)),
+        sampleScene.sceneSDF(pos + Vec2(0.0, ELIPSON))
+    );
+    Vec2 v2 = Vec2(
+        sampleScene.sceneSDF(pos - Vec2(ELIPSON, 0.0)),
+        sampleScene.sceneSDF(pos - Vec2(0.0, ELIPSON))
+    );
+    Vec2 temp = v1-v2;
+    temp.normalise();
+    return temp;
 }

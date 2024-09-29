@@ -4,6 +4,7 @@
 #include <cmath>
 
 #define PI 3.141592653589793
+#define ELIPSON 0.001
 
 class Vec2
 {   

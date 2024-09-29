@@ -35,10 +35,11 @@ float min(float a, float b)
 
 
 //rough aprroximation: Redo required
-void findNormal(Rigidbody *r1, Rigidbody *r2, Vec2 *normal, float *dist)
+/* void findNormal(Rigidbody *r1, Rigidbody *r2, Vec2 *normal, float *dist)
 {
     *normal = r2->getPos() - r1->getPos();
     *dist = (r2->signedDistFunc(r1->getPos())+r1->signedDistFunc(r2->getPos())-normal->mag());
     normal->normalise();
     
 }
+ */
