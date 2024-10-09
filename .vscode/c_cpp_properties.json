@@ -3,7 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/include/x86_64-linux-gnu/c++/13",
+                "/usr/include/x86_64-linux-gnu"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +16,7 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x86",
-            "compilerPath": "C:/TDM-GCC-32/bin/g++.exe",
+            "compilerPath": "/usr/bin/g++-13",
             "compilerArgs": [
                 "-lbgi",
                 "-lgdi32",
@@ -23,6 +25,30 @@
                 "-loleaut32",
                 "-lole32"
             ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/saksham/Projects/Physics-Engine-2D/**",
+                "/usr/include/x86_64-linux-gnu/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++-13",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPathInCppPropertiesJson": "/usr/bin/g++-13",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "/home/saksham/Projects/Physics-Engine-2D/**",
+                    "/usr/include/x86_64-linux-gnu",
+                    "/usr/include/x86_64-linux-gnu/bits/**",
+                    "/usr/include/x86_64-linux-gnu/c++/13/bits/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4

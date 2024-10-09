@@ -1,5 +1,5 @@
-#include <graphics.h>
 #include <iostream>
+#include <graphics.h>
 #include <ctime>
 #include <chrono>
 #include <random>
