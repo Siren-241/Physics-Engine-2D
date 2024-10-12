@@ -2,8 +2,6 @@
 #define RIGIDBODY_H
 
 #include <iostream>
-#include <graphics.h>
-
 #include "Math2D.h"
 
 class Rigidbody
@@ -15,7 +13,7 @@ class Rigidbody
 
     public:
     
-        boolean isStatic = false;
+        bool isStatic = false;
         
         //col operations
         void setCol(int);

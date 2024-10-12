@@ -33,4 +33,6 @@ class Vec2
 
 };
 
+
+
 #endif //MATH2D_H

@@ -1,15 +1,17 @@
 #include <iostream>
-#include <graphics.h>
+//#include <graphics.h>
 #include <ctime>
 #include <chrono>
 #include <random>
 #include <vector>
+#include <GLFW/glfw3.h>
 
 #include "sourceCode/Math2D.h"
 #include "sourceCode/Rigidbody.h"
 #include "sourceCode/objects.h"
 #include "sourceCode/utils.h"
 #include "sourceCode/SceneManager.h"
+#include "sourceCode/glad/glad.h"
 
 const COLORREF BACK_COL = 0x0f0f10;
 static void gameLoop();
