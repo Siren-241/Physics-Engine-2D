@@ -13,7 +13,7 @@
 #include "sourceCode/SceneManager.h"
 #include "sourceCode/glad/glad.h"
 
-const COLORREF BACK_COL = 0x0f0f10;
+const int BACK_COL = 0x0f0f10;
 static void gameLoop();
 
 Vec2 readWASDInputs();
