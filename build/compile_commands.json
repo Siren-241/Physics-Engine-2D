@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/engine.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/engine.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/engine.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/Rigidbody.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/Rigidbody.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o"
+}
+]

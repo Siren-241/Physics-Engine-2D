@@ -4,14 +4,15 @@
 #include <chrono>
 #include <random>
 #include <vector>
-#include <GLFW/glfw3.h>
 
 #include "sourceCode/Math2D.h"
 #include "sourceCode/Rigidbody.h"
 #include "sourceCode/objects.h"
 #include "sourceCode/utils.h"
 #include "sourceCode/SceneManager.h"
+
 #include "sourceCode/glad/glad.h"
+#include <GLFW/glfw3.h>
 
 const int BACK_COL = 0x0f0f10;
 static void gameLoop();
@@ -23,7 +24,7 @@ void displayFPS(char*, std::chrono::duration<double>);
 Vec2 findNormal(Vec2);
 float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
-
+int _createWindow();
 
 char fps[50];
 Scene sampleScene;
@@ -41,9 +42,39 @@ int main()
     gameLoop();
 
     closegraph();
-    return 0;
+    
+    
+    
+    return _createWindow();
 }
 
+int _createWindow()
+{
+    
+    GLFWwindow* window;
+    if(!glfwInit())return -1;
+
+    window = glfwCreateWindow(640, 480, "Engine", NULL, NULL);
+
+    if(!window)
+    {
+        glfwTerminate();
+        return -1;
+    }
+
+    glfwMakeContextCurrent(window);
+
+    if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+    {
+        std::cout<<"Couldn't load OpenGL"<< std::endl;
+        glfwTerminate();
+        return 1;
+    }
+    glClearColor(0.25f, 0.5f, 0.75f, 1);
+
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+}
 
 
 
