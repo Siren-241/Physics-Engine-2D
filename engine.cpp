@@ -17,14 +17,12 @@
 const int BACK_COL = 0x0f0f10;
 static void gameLoop();
 
-Vec2 readWASDInputs();
-void displayCorrection();
-//void drawObjects(Rigidbody*[], int);
+Vec2 readWASDInputs(GLFWwindow*);
 void displayFPS(char*, std::chrono::duration<double>);
 Vec2 findNormal(Vec2);
 float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
-int _createWindow();
+int _ManageWindow(GLFWwindow*);
 
 char fps[50];
 Scene sampleScene;
@@ -33,25 +31,30 @@ Scene sampleScene;
 int main()
 {
     //window declaration
+    #if false //graphics.h code
     int gd=DETECT, gm;
     initgraph(&gd, &gm, (char *)"");
     
     setbkcolor(BACK_COL);
 
-    //just for clean code
-    gameLoop();
-
     closegraph();
-    
-    
-    
-    return _createWindow();
-}
-
-int _createWindow()
-{
+    #endif
     
     GLFWwindow* window;
+
+    if(_ManageWindow(window) != 0)
+    {
+        return -1;
+    }
+    
+   
+    
+    return 0;
+}
+
+int _ManageWindow(GLFWwindow* window)
+{
+    
     if(!glfwInit())return -1;
 
     window = glfwCreateWindow(640, 480, "Engine", NULL, NULL);
@@ -68,26 +71,24 @@ int _createWindow()
     {
         std::cout<<"Couldn't load OpenGL"<< std::endl;
         glfwTerminate();
-        return 1;
+        return -1;
     }
     glClearColor(0.25f, 0.5f, 0.75f, 1);
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
-}
+    //start of non-OpenGL code
 
 
 
-static void gameLoop()
-{
     std::chrono::time_point<std::chrono::system_clock> startTime;
     std::chrono::duration<double> deltaTime;
 
 
     //unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
     //std::minstd_rand0 generator(seed);
-    Ball b1(getmaxx()/2, getmaxy() ,50);
-    Rect r1(getmaxx()/2, getmaxy()/2 ,100, 50);
+    Ball b1(getmaxx(window)/2, getmaxy(window) ,50);
+    Rect r1(getmaxx(window)/2, getmaxy(window)/2 ,100, 50);
     std::vector<Rigidbody*> objs;
     objs.push_back(&b1);
     objs.push_back(&r1);
@@ -96,31 +97,38 @@ static void gameLoop()
     Vec2 mousePos;
     sampleScene.SceneInit(&objs);
 
-    //The Loop:
-    for(int frame = 0; frame>=0; frame++)
+
+
+
+    while(!glfwWindowShouldClose(window) && glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS)
     {
         startTime = std::chrono::high_resolution_clock::now();
-        mousePos.setTo( Vec2(mousex(), mousey()) );
+        mousePos.setTo( Vec2(mousex(window), mousey(window)));
 
         //clear screen
-        clearviewport();
+        //clearviewport();
 
         //draw
         sampleScene.drawScene();
 
 
         int speed = 5;
-        Vec2 dir = readWASDInputs();
+        Vec2 dir = readWASDInputs(window);
 
         sampleScene.unique_objects_array.at(0)->Move(dir*speed);
 
         //debug mouse sdf
+        /*
         if(GetKeyState(VK_LBUTTON) & 0x8000)
         {
             float min_dist = sampleScene.sceneSDF(mousePos);
             circle(mousePos.getX(), mousePos.getY(), min_dist);
             circle(mousePos.getX(), mousePos.getY(), 2);
-        }
+        }*/
+       //drawLine(window, Vec2(0), Vec2(10));
+       
+       std::cout<<"CURRENT :: engine : debug mouse sdf yet to be implemented...\n";
+       
 
         #if false
             for (int i = 0; i < sampleScene.unique_objects_array.size() - 1; i++)
@@ -154,6 +162,8 @@ static void gameLoop()
                 
             }
         #endif
+
+
         #if true
         for (int i = 0; i < sampleScene.unique_objects_array.size(); i++)
         {
@@ -185,8 +195,9 @@ static void gameLoop()
             }
             
         }
-        
         #endif
+        
+        
 
         //Normal testing 
         drawNormals(mousePos);
@@ -194,43 +205,39 @@ static void gameLoop()
         //Print out Fps on the screen
         displayFPS(fps, deltaTime);
 
-        //display correction
-        displayCorrection();
 
 
         deltaTime = std::chrono::high_resolution_clock::now() - startTime;
 
 
 
-        //loop break
-        if(GetAsyncKeyState(0x1b))
-        {
-            break;
-        }
 
-        
+
+        glClear(GL_COLOR_BUFFER_BIT);
+        glfwSwapBuffers(window);
+        glfwPollEvents();
     }
+
+
+    return 0;
 }
 
 
 void displayFPS(char *fps, std::chrono::duration<double> dt)
 {
-    sprintf(fps, "%d", (int)(1/(double)dt.count()));
+  /*   sprintf(fps, "%d", (int)(1/(double)dt.count()));
     char info[10] =  "FPS: ";
     strcat(info, fps);
-    outtextxy(10, 10, (char *)info);
+    outtextxy(10, 10, (char *)info); */
+
+    
+    std::cout<<"engine : diplayFPS func yet to be implemented...\n\n";
+    
 
 }
-
-void displayCorrection()
+Vec2 readWASDInputs(GLFWwindow* window)
 {
-    swapbuffers();
-    delay(5);
-}
-
-Vec2 readWASDInputs()
-{
-    Vec2 _dir;
+/*     Vec2 _dir;
     if(GetAsyncKeyState(K_W))
     {
         _dir = _dir + Vec2(0,-1);
@@ -250,6 +257,28 @@ Vec2 readWASDInputs()
 
     _dir.normalise();
     return _dir;
+ */
+
+    Vec2 _dir;
+
+    int stateW = glfwGetKey(window, GLFW_KEY_W), stateA = glfwGetKey(window, GLFW_KEY_A), stateS = glfwGetKey(window, GLFW_KEY_S), stateD = glfwGetKey(window, GLFW_KEY_D);
+    if(stateW == GLFW_PRESS)
+        _dir = _dir + Vec2(0,-1);
+    if(stateA == GLFW_PRESS)
+        _dir = _dir + Vec2(-1,0);
+    if(stateS == GLFW_PRESS)
+        _dir = _dir + Vec2(0,1);
+    if(stateD == GLFW_PRESS)
+        _dir = _dir + Vec2(1,0);
+    
+    _dir.normalise();
+    
+    
+    //std::cout<<"engine : readWASDInputs yet to be implemented...\n";
+    
+
+    return _dir;
+
 }
 
 /* void drawObjects(Rigidbody *_objs[], int _len)
@@ -265,14 +294,16 @@ Vec2 readWASDInputs()
 }
  */
 void drawNormals(Vec2 _mPos)
-{
+{/* 
     float len = sampleScene.sceneSDF(_mPos);
     Vec2 _end = findNormal(_mPos);
     _end.normalise();
     _end.setTo(_end * abs(len));
-    //printf("%f",_end.mag());
-    //printf("\n");
-    line(getmaxx()/2,getmaxy()/2, getmaxx()/2+_end.getX(),getmaxy()/2+_end.getY());
+    line(getmaxx(window)/2,getmaxy(window)/2, getmaxx(window)/2+_end.getX(),getmaxy(window)/2+_end.getY());
+*/
+     
+    std::cout<<"engine : drawNormals yet to be implemented...\n";
+    
 }
 
 Vec2 findNormal(Vec2 pos)
@@ -293,4 +324,9 @@ Vec2 findNormal(Vec2 pos)
 float findDistance(Rigidbody* r1, Rigidbody* r2)
 {
     
+    std::cout<<"engine : findDistance yet to be implemented...\n";
+    
+
+    return 0;
+
 }

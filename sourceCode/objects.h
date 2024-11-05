@@ -23,8 +23,8 @@ class Rect : public Rigidbody
         void draw(int _col);
 
         //constructors
-        Rect();
-        Rect(float _w, float _h);
+        //Rect();
+        //Rect(float _w, float _h);
         Rect(int _x, int _y, float _w, float _h);
 
 };
@@ -44,7 +44,7 @@ class Ball : public Rigidbody
         void draw(int _col);
 
         //constructors
-        Ball();
+        //Ball();
         Ball(int _x, int _y, float _r);
         Ball(int _x, int _y, float _r, int _col);
 };

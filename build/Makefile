@@ -225,6 +225,30 @@ sourceCode/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.s
 .PHONY : sourceCode/SceneManager.cpp.s
 
+sourceCode/glad/glad.o: sourceCode/glad/glad.c.o
+.PHONY : sourceCode/glad/glad.o
+
+# target to build an object file
+sourceCode/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o
+.PHONY : sourceCode/glad/glad.c.o
+
+sourceCode/glad/glad.i: sourceCode/glad/glad.c.i
+.PHONY : sourceCode/glad/glad.i
+
+# target to preprocess a source file
+sourceCode/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.i
+.PHONY : sourceCode/glad/glad.c.i
+
+sourceCode/glad/glad.s: sourceCode/glad/glad.c.s
+.PHONY : sourceCode/glad/glad.s
+
+# target to generate assembly for a file
+sourceCode/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.s
+.PHONY : sourceCode/glad/glad.c.s
+
 sourceCode/objects.o: sourceCode/objects.cpp.o
 .PHONY : sourceCode/objects.o
 
@@ -294,6 +318,9 @@ help:
 	@echo "... sourceCode/SceneManager.o"
 	@echo "... sourceCode/SceneManager.i"
 	@echo "... sourceCode/SceneManager.s"
+	@echo "... sourceCode/glad/glad.o"
+	@echo "... sourceCode/glad/glad.i"
+	@echo "... sourceCode/glad/glad.s"
 	@echo "... sourceCode/objects.o"
 	@echo "... sourceCode/objects.i"
 	@echo "... sourceCode/objects.s"

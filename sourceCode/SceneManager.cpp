@@ -30,7 +30,7 @@ float Scene::sceneSDF(Vec2 pos)
 
 void Scene::drawScene()
 {
-    setlinestyle(0,0,2);
+    //setlinestyle(0,0,2);
     for (auto& obj : unique_objects_array)
     {
         obj->draw();

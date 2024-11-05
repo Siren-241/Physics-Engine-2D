@@ -34,5 +34,11 @@
   "command": "/usr/bin/c++   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
   "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
   "output": "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/cc   -g -o CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
 }
 ]
