@@ -1,0 +1,3 @@
+/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles/Physics_Engine.dir
+/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles/edit_cache.dir
+/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles/rebuild_cache.dir

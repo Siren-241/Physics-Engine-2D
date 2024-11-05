@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/main.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/main.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/main.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/main.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/Rigidbody.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/Rigidbody.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/cc  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
+}
+]

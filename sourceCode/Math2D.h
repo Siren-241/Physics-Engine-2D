@@ -18,6 +18,7 @@ class Vec2
         Vec2(float, float);
         ~Vec2();
 
+
         Vec2 operator+(Vec2);
         Vec2 operator-(Vec2);
         Vec2 operator*(float);
@@ -30,8 +31,8 @@ class Vec2
         Vec2 getPos();
         void normalise();
         void setTo(Vec2);
-
 };
+
 
 
 

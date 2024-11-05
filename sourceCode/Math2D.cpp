@@ -39,6 +39,7 @@ Vec2 Vec2::operator/(float s)
 }
 
 
+
 float Vec2::mag()
 {
     return sqrt( (this->x) * (this->x) + (this->y) * (this->y) ); 

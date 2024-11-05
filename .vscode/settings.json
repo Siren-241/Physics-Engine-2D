@@ -50,6 +50,13 @@
         "ctime": "cpp",
         "ratio": "cpp",
         "list": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "numbers": "cpp",
+        "span": "cpp",
+        "cinttypes": "cpp",
+        "variant": "cpp"
     }
 }
