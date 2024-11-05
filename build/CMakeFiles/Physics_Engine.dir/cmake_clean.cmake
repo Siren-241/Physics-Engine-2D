@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o"
   "CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o.d"
+  "CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o"
+  "CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
   "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"

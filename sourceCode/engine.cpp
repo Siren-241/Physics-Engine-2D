@@ -43,6 +43,7 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
             std::cout << "Rendered creation Failed...\n";
         }
         
+
         running = true;
     }
     else
@@ -52,6 +53,10 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
     
 }
 
+void Engine::Populate()
+{
+    AddObject::Rect(scene, 0,0,100,100);
+}
 
 void Engine::HandleEvents()
 {
@@ -77,11 +82,12 @@ void Engine::HandleEvents()
 
 void Engine::Update()
 {
-
+    scene.Update();
 }
 void Engine::Render()
 {
     SDL_RenderClear(renderer);
+    scene.Render(window, renderer);
     SDL_RenderPresent(renderer);
 }
 

@@ -16,20 +16,24 @@
 
 class Engine
 {
-private:
-    SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
-    bool running;
-public:
-    Engine();
-    ~Engine();
+    private:
+        SDL_Window* window = nullptr;
+        SDL_Renderer* renderer = nullptr;
+        bool running;
 
-    void Init(const char* title, int xpos, int ypos, int width, int height, bool fullScreen);
-    void HandleEvents();
-    void Update();
-    void Render();
-    bool isRunning() { return running; }
-    void Kill();
+        SceneManager scene;
+        
+    public:
+        Engine();
+        ~Engine();
+
+        void Init(const char* title, int xpos, int ypos, int width, int height, bool fullScreen);
+        void Populate();
+        void HandleEvents();
+        void Update();
+        void Render();
+        bool isRunning() { return running; }
+        void Kill();
 };
 
 

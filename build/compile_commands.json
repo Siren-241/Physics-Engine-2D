@@ -31,6 +31,12 @@
 },
 {
   "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
   "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
   "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp",
   "output": "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o"

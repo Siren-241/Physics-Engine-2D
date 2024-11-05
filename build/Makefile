@@ -225,6 +225,30 @@ sourceCode/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.s
 .PHONY : sourceCode/SceneManager.cpp.s
 
+sourceCode/SceneUtils.o: sourceCode/SceneUtils.cpp.o
+.PHONY : sourceCode/SceneUtils.o
+
+# target to build an object file
+sourceCode/SceneUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o
+.PHONY : sourceCode/SceneUtils.cpp.o
+
+sourceCode/SceneUtils.i: sourceCode/SceneUtils.cpp.i
+.PHONY : sourceCode/SceneUtils.i
+
+# target to preprocess a source file
+sourceCode/SceneUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.i
+.PHONY : sourceCode/SceneUtils.cpp.i
+
+sourceCode/SceneUtils.s: sourceCode/SceneUtils.cpp.s
+.PHONY : sourceCode/SceneUtils.s
+
+# target to generate assembly for a file
+sourceCode/SceneUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.s
+.PHONY : sourceCode/SceneUtils.cpp.s
+
 sourceCode/engine.o: sourceCode/engine.cpp.o
 .PHONY : sourceCode/engine.o
 
@@ -342,6 +366,9 @@ help:
 	@echo "... sourceCode/SceneManager.o"
 	@echo "... sourceCode/SceneManager.i"
 	@echo "... sourceCode/SceneManager.s"
+	@echo "... sourceCode/SceneUtils.o"
+	@echo "... sourceCode/SceneUtils.i"
+	@echo "... sourceCode/SceneUtils.s"
 	@echo "... sourceCode/engine.o"
 	@echo "... sourceCode/engine.i"
 	@echo "... sourceCode/engine.s"

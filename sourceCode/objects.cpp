@@ -1,7 +1,7 @@
 #include "objects.h"
 
 //sdfs
-float Rect::signedDistFunc(Vec2 p)
+float objects::Rect::signedDistFunc(Vec2 p)
 {
     //adjust p to objects domain
     p = p - this->getPos();
@@ -17,7 +17,7 @@ float Rect::signedDistFunc(Vec2 p)
     return d_o + d_i;
 
 }
-float Ball::signedDistFunc(Vec2 p)
+float objects::Circle::signedDistFunc(Vec2 p)
 {
     return ((p - this->getPos()).mag())-this->r;
 }
@@ -37,7 +37,7 @@ Rect::Rect(float _w, float _h)
 
     this->setPos(Vec2(getmaxx()/2, getmaxy()/2));
 }*/
-Rect::Rect(int _x = 200, int _y=200, float _w = 50, float _h = 50)
+objects::Rect::Rect(int _x = 200, int _y=200, float _w = 50, float _h = 50)
 {
     this->width = _w;
     this->height = _h;
@@ -45,17 +45,17 @@ Rect::Rect(int _x = 200, int _y=200, float _w = 50, float _h = 50)
     this->setPos(Vec2(_x, _y));
 }
 
-/*Ball::Ball()
+/*Circle::Circle()
 {
     this->setPos(Vec2(getmaxx()/2, getmaxy()/2));
     this->r = 10;
 }*/
-Ball::Ball(int _x, int _y, float _r)
+objects::Circle::Circle(int _x, int _y, float _r)
 {
     this->setPos(Vec2(_x, _y));
     this->r = _r;
 }
-Ball::Ball(int _x, int _y, float _r, int _col)
+objects::Circle::Circle(int _x, int _y, float _r, int _col)
 {
     this->setPos(Vec2(_x, _y));
     this->r = _r;
@@ -63,7 +63,7 @@ Ball::Ball(int _x, int _y, float _r, int _col)
 }
 
 
-void Rect::draw()
+void objects::Rect::draw()
 {
     //Point 1
     p_arr[0] = (int)getPos().getX() + (-width*cos(getAngle()) - height*sin(getAngle()))/2;
@@ -95,7 +95,7 @@ void Rect::draw()
     std::cout<<"objects.cpp : Rect::draw yet to be implemented...\n";
 }
 
-/* void Rect::draw()
+/* void objects::Rect::draw()
 {
     for (int i = this->getX() - width; i < this->getX() + width; i++)
     {
@@ -113,7 +113,7 @@ void Rect::draw()
     }
     
  }*/
-void Rect::draw(int _col) 
+void objects::Rect::draw(int _col) 
 {
     //Point 1
     p_arr[0] = (int)getPos().getX() + (-width*cos(getAngle()) - height*sin(getAngle()))/2;
@@ -147,20 +147,20 @@ void Rect::draw(int _col)
 
 }
 
-void Ball::draw()
+void objects::Circle::draw()
 {/* 
     setfillstyle(1,getCol());
     fillellipse(this->getPos().getX(),this->getPos().getY(),this->r,this->r); */
-    std::cout<<"objects.cpp : Ball::draw yet to be implemented...\n";
+    std::cout<<"objects.cpp : Circle::draw yet to be implemented...\n";
 }
 
-void Ball::draw(int _col)
+void objects::Circle::draw(int _col)
 {
     setCol(_col);
 /* 
     setfillstyle(1,getCol());
     fillellipse(this->getPos().getX(),this->getPos().getY(),this->r,this->r); */
-    std::cout<<"objects.cpp : Ball::draw yet to be implemented...\n";
+    std::cout<<"objects.cpp : Circle::draw yet to be implemented...\n";
 }
 
 

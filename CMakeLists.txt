@@ -13,9 +13,11 @@ add_executable(Physics_Engine
     sourceCode/objects.cpp
     sourceCode/Rigidbody.cpp
     sourceCode/SceneManager.cpp
+    sourceCode/SceneUtils.cpp
     sourceCode/utils.cpp
     sourceCode/engine.cpp
     sourceCode/glad/glad.c
+
 
     )
 

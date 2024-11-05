@@ -322,4 +322,5 @@ CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/khrplatform.h \
  /usr/include/GLFW/glfw3.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.h
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.h \
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.h
