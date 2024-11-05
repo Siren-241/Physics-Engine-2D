@@ -69,19 +69,19 @@ include CMakeFiles/Physics_Engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Physics_Engine.dir/flags.make
 
-CMakeFiles/Physics_Engine.dir/engine.cpp.o: CMakeFiles/Physics_Engine.dir/flags.make
-CMakeFiles/Physics_Engine.dir/engine.cpp.o: /home/saksham/Projects/Physics-Engine-2D/engine.cpp
-CMakeFiles/Physics_Engine.dir/engine.cpp.o: CMakeFiles/Physics_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Physics_Engine.dir/engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Physics_Engine.dir/engine.cpp.o -MF CMakeFiles/Physics_Engine.dir/engine.cpp.o.d -o CMakeFiles/Physics_Engine.dir/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/engine.cpp
+CMakeFiles/Physics_Engine.dir/main.cpp.o: CMakeFiles/Physics_Engine.dir/flags.make
+CMakeFiles/Physics_Engine.dir/main.cpp.o: /home/saksham/Projects/Physics-Engine-2D/main.cpp
+CMakeFiles/Physics_Engine.dir/main.cpp.o: CMakeFiles/Physics_Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Physics_Engine.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Physics_Engine.dir/main.cpp.o -MF CMakeFiles/Physics_Engine.dir/main.cpp.o.d -o CMakeFiles/Physics_Engine.dir/main.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/main.cpp
 
-CMakeFiles/Physics_Engine.dir/engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Physics_Engine.dir/engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saksham/Projects/Physics-Engine-2D/engine.cpp > CMakeFiles/Physics_Engine.dir/engine.cpp.i
+CMakeFiles/Physics_Engine.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Physics_Engine.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saksham/Projects/Physics-Engine-2D/main.cpp > CMakeFiles/Physics_Engine.dir/main.cpp.i
 
-CMakeFiles/Physics_Engine.dir/engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Physics_Engine.dir/engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saksham/Projects/Physics-Engine-2D/engine.cpp -o CMakeFiles/Physics_Engine.dir/engine.cpp.s
+CMakeFiles/Physics_Engine.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Physics_Engine.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saksham/Projects/Physics-Engine-2D/main.cpp -o CMakeFiles/Physics_Engine.dir/main.cpp.s
 
 CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o: CMakeFiles/Physics_Engine.dir/flags.make
 CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o: /home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.cpp
@@ -153,10 +153,24 @@ CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.cpp -o CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.s
 
+CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: CMakeFiles/Physics_Engine.dir/flags.make
+CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp
+CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: CMakeFiles/Physics_Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o -MF CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o.d -o CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp
+
+CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp > CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.i
+
+CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp -o CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.s
+
 CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o: CMakeFiles/Physics_Engine.dir/flags.make
 CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o: /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c
 CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o: CMakeFiles/Physics_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o -MF CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o.d -o CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c
 
 CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.i: cmake_force
@@ -169,29 +183,32 @@ CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.s: cmake_force
 
 # Object files for target Physics_Engine
 Physics_Engine_OBJECTS = \
-"CMakeFiles/Physics_Engine.dir/engine.cpp.o" \
+"CMakeFiles/Physics_Engine.dir/main.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o" \
+"CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o" \
 "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
 
 # External object files for target Physics_Engine
 Physics_Engine_EXTERNAL_OBJECTS =
 
-Physics_Engine: CMakeFiles/Physics_Engine.dir/engine.cpp.o
+Physics_Engine: CMakeFiles/Physics_Engine.dir/main.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/Rigidbody.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o
+Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o
 Physics_Engine: CMakeFiles/Physics_Engine.dir/build.make
+Physics_Engine: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Physics_Engine: /usr/lib/x86_64-linux-gnu/libGLX.so
 Physics_Engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Physics_Engine: CMakeFiles/Physics_Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Physics_Engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/saksham/Projects/Physics-Engine-2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Physics_Engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Physics_Engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -129,29 +129,29 @@ Physics_Engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/build
 .PHONY : Physics_Engine/fast
 
-engine.o: engine.cpp.o
-.PHONY : engine.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/engine.cpp.o
-.PHONY : engine.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-engine.i: engine.cpp.i
-.PHONY : engine.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/engine.cpp.i
-.PHONY : engine.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-engine.s: engine.cpp.s
-.PHONY : engine.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/engine.cpp.s
-.PHONY : engine.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 sourceCode/Math2D.o: sourceCode/Math2D.cpp.o
 .PHONY : sourceCode/Math2D.o
@@ -224,6 +224,30 @@ sourceCode/SceneManager.s: sourceCode/SceneManager.cpp.s
 sourceCode/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.s
 .PHONY : sourceCode/SceneManager.cpp.s
+
+sourceCode/engine.o: sourceCode/engine.cpp.o
+.PHONY : sourceCode/engine.o
+
+# target to build an object file
+sourceCode/engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o
+.PHONY : sourceCode/engine.cpp.o
+
+sourceCode/engine.i: sourceCode/engine.cpp.i
+.PHONY : sourceCode/engine.i
+
+# target to preprocess a source file
+sourceCode/engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.i
+.PHONY : sourceCode/engine.cpp.i
+
+sourceCode/engine.s: sourceCode/engine.cpp.s
+.PHONY : sourceCode/engine.s
+
+# target to generate assembly for a file
+sourceCode/engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.s
+.PHONY : sourceCode/engine.cpp.s
 
 sourceCode/glad/glad.o: sourceCode/glad/glad.c.o
 .PHONY : sourceCode/glad/glad.o
@@ -306,9 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Physics_Engine"
-	@echo "... engine.o"
-	@echo "... engine.i"
-	@echo "... engine.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... sourceCode/Math2D.o"
 	@echo "... sourceCode/Math2D.i"
 	@echo "... sourceCode/Math2D.s"
@@ -318,6 +342,9 @@ help:
 	@echo "... sourceCode/SceneManager.o"
 	@echo "... sourceCode/SceneManager.i"
 	@echo "... sourceCode/SceneManager.s"
+	@echo "... sourceCode/engine.o"
+	@echo "... sourceCode/engine.i"
+	@echo "... sourceCode/engine.s"
 	@echo "... sourceCode/glad/glad.o"
 	@echo "... sourceCode/glad/glad.i"
 	@echo "... sourceCode/glad/glad.s"

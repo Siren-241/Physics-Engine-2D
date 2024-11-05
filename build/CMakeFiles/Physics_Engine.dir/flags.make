@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2
 
 C_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2
 
 CXX_FLAGS = -g
 

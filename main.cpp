@@ -1,53 +1,28 @@
-#include <iostream>
-//#include <graphics.h>
-#include <ctime>
-#include <chrono>
-#include <random>
-#include <vector>
-
-#include "sourceCode/Math2D.h"
-#include "sourceCode/Rigidbody.h"
-#include "sourceCode/objects.h"
-#include "sourceCode/utils.h"
-#include "sourceCode/SceneManager.h"
-
-#include "sourceCode/glad/glad.h"
-#include <GLFW/glfw3.h>
-
-const int BACK_COL = 0x0f0f10;
-static void gameLoop();
+#include "sourceCode/engine.h"
 
 Vec2 readWASDInputs(GLFWwindow*);
-void displayFPS(char*, std::chrono::duration<double>);
+
 Vec2 findNormal(Vec2);
 float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
 int _ManageWindow(GLFWwindow*);
 
-char fps[50];
 Scene sampleScene;
 
 
 int main()
 {
-    //window declaration
-    #if false //graphics.h code
-    int gd=DETECT, gm;
-    initgraph(&gd, &gm, (char *)"");
-    
-    setbkcolor(BACK_COL);
+    int width = 800, height = 600;
+    Engine* engine;
+    engine->Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
 
-    closegraph();
-    #endif
-    
-    GLFWwindow* window;
-
-    if(_ManageWindow(window) != 0)
+    while (engine->isRunning())
     {
-        return -1;
+        engine->HandleEvents();
+        engine->Update();
+        engine->Render();
     }
-    
-   
+       
     
     return 0;
 }
@@ -55,28 +30,6 @@ int main()
 int _ManageWindow(GLFWwindow* window)
 {
     
-    if(!glfwInit())return -1;
-
-    window = glfwCreateWindow(640, 480, "Engine", NULL, NULL);
-
-    if(!window)
-    {
-        glfwTerminate();
-        return -1;
-    }
-
-    glfwMakeContextCurrent(window);
-
-    if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
-    {
-        std::cout<<"Couldn't load OpenGL"<< std::endl;
-        glfwTerminate();
-        return -1;
-    }
-    glClearColor(0.25f, 0.5f, 0.75f, 1);
-
-    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-
     //start of non-OpenGL code
 
 
@@ -202,8 +155,6 @@ int _ManageWindow(GLFWwindow* window)
         //Normal testing 
         drawNormals(mousePos);
 
-        //Print out Fps on the screen
-        displayFPS(fps, deltaTime);
 
 
 
@@ -212,10 +163,6 @@ int _ManageWindow(GLFWwindow* window)
 
 
 
-
-        glClear(GL_COLOR_BUFFER_BIT);
-        glfwSwapBuffers(window);
-        glfwPollEvents();
     }
 
 
@@ -223,18 +170,6 @@ int _ManageWindow(GLFWwindow* window)
 }
 
 
-void displayFPS(char *fps, std::chrono::duration<double> dt)
-{
-  /*   sprintf(fps, "%d", (int)(1/(double)dt.count()));
-    char info[10] =  "FPS: ";
-    strcat(info, fps);
-    outtextxy(10, 10, (char *)info); */
-
-    
-    std::cout<<"engine : diplayFPS func yet to be implemented...\n\n";
-    
-
-}
 Vec2 readWASDInputs(GLFWwindow* window)
 {
 /*     Vec2 _dir;

@@ -14,7 +14,8 @@
 			"target_link_libraries",
 			"set_property",
 			"find_package",
-			"set_target_properties"
+			"set_target_properties",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -29,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 19,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
@@ -59,6 +60,12 @@
 				"file" : 1,
 				"line" : 671,
 				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
 			}
 		]
 	},
@@ -71,6 +78,18 @@
 					"fragment" : "-g"
 				}
 			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/saksham/Projects/Physics-Engine-2D/SDL2Test"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/usr/include/SDL2"
+				}
+			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
@@ -79,7 +98,8 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		},
 		{
@@ -89,10 +109,22 @@
 					"fragment" : "-g"
 				}
 			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/saksham/Projects/Physics-Engine-2D/SDL2Test"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/usr/include/SDL2"
+				}
+			],
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				6
+				7
 			]
 		}
 	],
@@ -112,6 +144,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "-lglfw",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libSDL2.so",
 				"role" : "libraries"
 			},
 			{
@@ -146,7 +183,8 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7
 			]
 		}
 	],
@@ -155,7 +193,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "engine.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -186,6 +224,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "sourceCode/utils.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sourceCode/engine.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
