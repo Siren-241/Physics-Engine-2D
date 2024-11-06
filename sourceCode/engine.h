@@ -19,6 +19,7 @@ class Engine
     private:
         SDL_Window* window = nullptr;
         SDL_Renderer* renderer = nullptr;
+        SDL_Surface* surface = nullptr;
         bool running;
 
         SceneManager scene;

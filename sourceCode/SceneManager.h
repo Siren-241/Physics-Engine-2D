@@ -10,12 +10,15 @@
 class SceneManager
 {
     private:
-        std::vector<Rigidbody*> objects_array;
+        std::vector<Rigidbody*> objects_array{};
     
     public:
+        SceneManager();
+        ~SceneManager();
+        void Init();
         void AddRigidbody(Rigidbody* obj);
         void Update();
-        void Render(SDL_Window* window, SDL_Renderer* renderer);
+        void Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface);
         float sceneSDF(Vec2);
 };
 

@@ -7,16 +7,14 @@ float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
 int _ManageWindow(GLFWwindow*);
 
-SceneManager scene;
-
 
 int main()
 {
     int width = 800, height = 600;
     Engine* engine;
     engine->Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
-
     engine->Populate();
+    
     //GameLoop
     while (engine->isRunning())
     {
