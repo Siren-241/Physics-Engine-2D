@@ -9,12 +9,12 @@
 
 namespace CollisionHandler
 {
-    void HandleCollisions(std::vector<Rigidbody*> objects);
+    void HandleCollisions(std::vector<Rigidbody*>* objects);
 }; // namespace CollisionHandler
 
 namespace RenderHandler
 {    
-    void Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface, std::vector<Rigidbody*> _objects);
+    void Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface, std::vector<Rigidbody*>* _objects);
 }; // namespace RenderHandler
 
 
@@ -26,6 +26,6 @@ struct ColourAtPixelCoords
     uint8_t b;
 };
 
-ColourAtPixelCoords FindColourAtPixel(int x, int y, std::vector<Rigidbody*> _objects);
+ColourAtPixelCoords FindColourAtPixel(int x, int y, std::vector<Rigidbody*>* _objects);
 
 #endif//_SCENEUTILS_H

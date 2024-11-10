@@ -20,7 +20,6 @@ namespace objects
             float signedDistFunc(Vec2 p);
             
             //draw Funcs
-            //void draw();
             void draw();
             void draw(int _col);
 

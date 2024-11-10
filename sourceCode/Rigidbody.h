@@ -8,7 +8,7 @@ class Rigidbody
 {
     private:
         Vec2 pos;
-        int col = rand()%16;
+        int col = 15;
         float angle = 0;
 
     public:
@@ -29,9 +29,9 @@ class Rigidbody
         //angle operations
         float getAngle();
         void setAngle(float);
-        //dont use yet
+        // dont use yet
         void rotateByRad(float);
-        //dont use yet
+        // dont use yet
         void rotateByDeg(float);
 
         virtual float signedDistFunc(Vec2)=0;

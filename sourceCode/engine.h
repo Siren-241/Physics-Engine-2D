@@ -33,7 +33,7 @@ class Engine
         void HandleEvents();
         void Update();
         void Render();
-        bool isRunning() { return running; }
+        inline bool isRunning() { return running; }
         void Kill();
 };
 

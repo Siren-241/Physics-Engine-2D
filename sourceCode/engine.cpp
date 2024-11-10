@@ -3,12 +3,10 @@
 
 Engine::Engine()
 {
-    
 }
 
 Engine::~Engine()
 {
-    Kill();
 }
   
 
@@ -28,6 +26,7 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
         {
             std::cout << "Window creation Failed...\n" << SDL_GetError() << '\n';
         }
+   
         
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer != NULL)
@@ -63,7 +62,7 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
 
 void Engine::Populate()
 {
-    // AddObject::Rect(scene, 0,0,100,100);
+    // scene.Rect(0,0,100,100);
 }
 
 void Engine::HandleEvents()

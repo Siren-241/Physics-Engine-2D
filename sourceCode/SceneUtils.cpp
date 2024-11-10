@@ -1,11 +1,11 @@
 #include "SceneUtils.h"
 
-void CollisionHandler::HandleCollisions(std::vector<Rigidbody*> _objects)
+void CollisionHandler::HandleCollisions(std::vector<Rigidbody*>* _objects)
 {
     //TODO: Implement Sdf collisions
 }
 
-void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface, std::vector<Rigidbody*> _objects)
+void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface, std::vector<Rigidbody*>* objsArrayPointer)
 {
 
     if(surface == NULL)
@@ -13,10 +13,7 @@ void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfa
         std::cout << "Error Rendering to Screen...\n" << SDL_GetError() << '\n';
         return;
     }
-    // if (_objects.empty())
-    // {
-    //     return;
-    // }
+
     
     SDL_LockSurface(surface);
     ColourAtPixelCoords info;
@@ -25,7 +22,7 @@ void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfa
     {
         for (int x = 0; x < surface->w; x++)
         {
-            info = FindColourAtPixel(x, y, _objects);
+            info = FindColourAtPixel(x, y, objsArrayPointer);
 
             pixelArray[y*surface->pitch + x*surface->format->BytesPerPixel + 0] = info.r;
             pixelArray[y*surface->pitch + x*surface->format->BytesPerPixel + 1] = info.g;
@@ -73,12 +70,17 @@ void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfa
     
 }
 
-ColourAtPixelCoords FindColourAtPixel(int x, int y, std::vector<Rigidbody*> _objects)
+ColourAtPixelCoords FindColourAtPixel(int x, int y, std::vector<Rigidbody*>* _objsArrayPointer)
 {
-    if(_objects.empty())return{MAXFLOAT, 0, 0, 0};
     ColourAtPixelCoords info;
-    info.dist = _objects.at(0)->signedDistFunc(Vec2(x,y));
-    for(auto& obj : _objects)
+    if(_objsArrayPointer->empty())
+    {
+        info = {MAXFLOAT, 0, 0, 0};
+        return info;
+    }
+    
+    info.dist = _objsArrayPointer->at(0)->signedDistFunc(Vec2(x,y));
+    for(auto& obj : *_objsArrayPointer)
     {
         float dist = obj->signedDistFunc(Vec2(x,y));
         if (info.dist > dist)
