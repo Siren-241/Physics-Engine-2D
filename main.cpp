@@ -10,7 +10,7 @@ int _ManageWindow(GLFWwindow*);
 
 int main()
 {
-    int width = 800, height = 600;
+    int width = 1280, height = 720;
     Engine* engine;
     engine->Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
     engine->Populate();

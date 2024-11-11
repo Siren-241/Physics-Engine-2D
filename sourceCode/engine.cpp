@@ -16,7 +16,7 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
     {
         std::cout << "SDL_Init Successful...\n";
 
-        int flags = fullScreen ? SDL_WINDOW_FULLSCREEN : SDL_WINDOW_SHOWN;
+        int flags = fullScreen ? SDL_WINDOW_FULLSCREEN : SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE;
         window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
         if (window != NULL)
         {
@@ -62,7 +62,8 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
 
 void Engine::Populate()
 {
-    // scene.Rect(0,0,100,100);
+    scene.Rect(400,300,100,100);
+    scene.Circle(50, 300, 100.0);
 }
 
 void Engine::HandleEvents()
@@ -76,9 +77,14 @@ void Engine::HandleEvents()
             break;
             
         case SDL_KEYDOWN:
-            if (event.key.keysym.sym == SDLK_ESCAPE)
+            switch(event.key.keysym.sym)
             {
-                Kill();
+                case SDLK_ESCAPE:
+                    Kill();
+                    break;
+                case SDLK_c:
+                    scene.clear();
+                    break;
             }
             break;
             

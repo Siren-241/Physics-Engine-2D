@@ -5,6 +5,8 @@ SceneManager::SceneManager()
 }
 SceneManager::~SceneManager()
 {
+    this->clear();
+    std::cout << "Destructor has been called";
 }
 
 void SceneManager::Init()
@@ -12,10 +14,10 @@ void SceneManager::Init()
     objects_array.clear();
 }
 
-// void SceneManager::AddRigidbody(Rigidbody* obj)
-// {
-//     objects_array.push_back(obj);
-// }
+void SceneManager::AddRigidbody(Rigidbody* obj)
+{
+    this->objects_array.push_back(obj);
+}
 
 void SceneManager::Update()
 {
@@ -31,6 +33,14 @@ void SceneManager::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfac
     RenderHandler::Render(window, renderer, surface, &objects_array);
 }
 
+void SceneManager::clear()
+{
+    for(auto& objPointer : objects_array)
+    {
+        delete objPointer;
+    }
+    objects_array.clear();
+}
 
 
 /**
@@ -42,9 +52,9 @@ void SceneManager::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfac
 */
 void SceneManager::Rect(int xpos, int ypos, float width, float height)
 {
-    // PROBLEM : r is going out of scope and garbage values are being read
-    objects::Rect r(xpos, ypos, width, height);
-    // this->objects_array.push_back(&r);
+    objects::Rect *r = new objects::Rect(xpos, ypos, width, height);
+    AddRigidbody(r);
+ 
 }
 
 /**
@@ -53,9 +63,8 @@ void SceneManager::Rect(int xpos, int ypos, float width, float height)
  * \param ypos y position of obj
  * \param radius radius of circle
 */
-void SceneManager::Circle(SceneManager* scene, int xpos, int ypos, float radius)
+void SceneManager::Circle(int xpos, int ypos, float radius)
 {
-    objects::Circle* c;
-    *c = objects::Circle(xpos, ypos, radius);
-    // scene->AddRigidbody(c);
+    objects::Circle* c = new objects::Circle(xpos, ypos, radius);
+    AddRigidbody(c);
 }
