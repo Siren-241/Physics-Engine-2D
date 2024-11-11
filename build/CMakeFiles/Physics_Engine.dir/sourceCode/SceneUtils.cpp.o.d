@@ -308,7 +308,4 @@ CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/Math2D.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/khrplatform.h \
- /usr/include/GLFW/glfw3.h
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h

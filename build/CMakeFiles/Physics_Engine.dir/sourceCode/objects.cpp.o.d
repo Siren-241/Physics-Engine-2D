@@ -176,10 +176,4 @@ CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/khrplatform.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/GLFW/glfw3.h
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h

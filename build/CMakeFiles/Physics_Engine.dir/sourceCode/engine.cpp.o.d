@@ -319,9 +319,6 @@ CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/Rigidbody.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/khrplatform.h \
- /usr/include/GLFW/glfw3.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \

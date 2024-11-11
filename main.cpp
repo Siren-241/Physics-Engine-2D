@@ -1,26 +1,24 @@
 #include "sourceCode/engine.h"
 
-Vec2 readWASDInputs();
 
 Vec2 findNormal(Vec2);
 float findDistance(Rigidbody*, Rigidbody*);
 void drawNormals(Vec2);
-int _ManageWindow(GLFWwindow*);
 
 
 int main()
 {
     int width = 1280, height = 720;
-    Engine* engine;
-    engine->Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
-    engine->Populate();
+    Engine engine;
+    engine.Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
+    engine.Populate();
     
     //GameLoop
-    while (engine->isRunning())
+    while (engine.isRunning())
     {
-        engine->HandleEvents();
-        engine->Update();
-        engine->Render();
+        engine.HandleEvents();
+        engine.Update();
+        engine.Render();
     }
        
     
@@ -41,11 +39,6 @@ int main()
 //     //unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 //     //std::minstd_rand0 generator(seed);
     
-
-//     Vec2 mousePos;
-    
-
-
 
 //     while(!glfwWindowShouldClose(window) && glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS)
 //     {

@@ -11,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
   "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o.d"
-  "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
-  "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o"
   "CMakeFiles/Physics_Engine.dir/sourceCode/objects.cpp.o.d"
   "CMakeFiles/Physics_Engine.dir/sourceCode/utils.cpp.o"
@@ -22,6 +20,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
+foreach(lang CXX)
   include(CMakeFiles/Physics_Engine.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

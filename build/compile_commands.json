@@ -46,11 +46,5 @@
   "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
   "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
   "output": "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
-},
-{
-  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
-  "command": "/usr/bin/cc  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
-  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/glad/glad.c",
-  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/glad/glad.c.o"
 }
 ]
