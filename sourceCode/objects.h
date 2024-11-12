@@ -1,6 +1,7 @@
 #ifndef OBJECTS_H
 #define OBJECTS_H
 
+
 #include "Rigidbody.h"
 #include "Math2D.h"
 #include "utils.h"
@@ -11,7 +12,6 @@ namespace objects
     {
         //params
         private:
-            int p_arr[10];
             float width, height;
 
         public:
@@ -20,13 +20,16 @@ namespace objects
             float signedDistFunc(Vec2 p);
             
             //draw Funcs
-            void draw();
-            void draw(int _col);
+            void draw(SDL_Renderer* renderer);
 
             //constructors
-            //Rect();
-            //Rect(float _w, float _h);
             Rect(int _x, int _y, float _w, float _h);
+
+            //getters and setters
+            inline int getW(){return this->width;}
+            inline int getH(){return this->height;}
+            inline void setW(int _w){this->width = _w;}
+            inline void setH(int _h){this->height = _h;}
 
     };
 
@@ -35,19 +38,21 @@ namespace objects
         //Parameters
         private:
             float r;
+            void DrawCircle(SDL_Renderer* renderer, int32_t centreX, int32_t centreY, int32_t radius);
 
         public:
             //sdf
             float signedDistFunc(Vec2 p);
 
             //draw Funcs
-            void draw();
-            void draw(int _col);
+            void draw(SDL_Renderer* renderer);
 
             //constructors
-            //Circle();
             Circle(int _x, int _y, float _r);
-            Circle(int _x, int _y, float _r, int _col);
+
+            // Getters and Setters
+            inline void setRadius(float _r){ this->r = _r; }
+            inline float getRadius(){ return r; }
     };
 
 

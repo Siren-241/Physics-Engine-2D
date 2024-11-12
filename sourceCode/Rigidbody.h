@@ -2,6 +2,7 @@
 #define RIGIDBODY_H
 
 #include <iostream>
+#include <SDL2/SDL.h>
 #include "Math2D.h"
 
 class Rigidbody
@@ -35,7 +36,7 @@ class Rigidbody
         void rotateByDeg(float);
 
         virtual float signedDistFunc(Vec2)=0;
-        virtual void draw()=0;
+        virtual void draw(SDL_Renderer* renderer)=0;
 
 
 };

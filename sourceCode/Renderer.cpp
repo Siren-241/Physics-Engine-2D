@@ -1,13 +1,12 @@
-#include "SceneUtils.h"
+#include "Renderer.h"
 
-void CollisionHandler::HandleCollisions(std::vector<Rigidbody*>* _objects)
+
+void SceneRenderer::Render(SDL_Window* window, SDL_Renderer* renderer, std::vector<Rigidbody*>* objsArrayPointer)
 {
-    //TODO: Implement Sdf collisions
-}
-
-void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface, std::vector<Rigidbody*>* objsArrayPointer)
-{
-
+    /**
+     * Extremely Laggy rendering
+     */
+    SDL_Surface* surface = SDL_GetWindowSurface(window);
     if(surface == NULL)
     {
         std::cout << "Error Rendering to Screen...\n" << SDL_GetError() << '\n';
@@ -17,7 +16,7 @@ void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfa
     
     SDL_LockSurface(surface);
     ColourAtPixelCoords info;
-    uint8_t* pixelArray = (uint8_t*) surface->pixels;
+    Uint8* pixelArray = (Uint8*) surface->pixels;
     for (int y = 0; y < surface->h; y++)
     {
         for (int x = 0; x < surface->w; x++)
@@ -33,44 +32,13 @@ void RenderHandler::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surfa
     
 
     SDL_UnlockSurface(surface);
+    SDL_RenderPresent(renderer);
     SDL_UpdateWindowSurface(window);
 
-
-
-
-    /*
-    int width, height;
-    SDL_GetWindowSize(window, &width, &height);
-    //SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
-        {
-            if (!_objects.empty())
-            {
-    //             float minDist = _objects.at(0)->signedDistFunc(Vec2(x, y));
-    //             for(auto& obj : _objects)
-    //             {
-    //                 float dist = obj->signedDistFunc(Vec2(x, y));
-    //                 if (dist < minDist)
-    //                 {
-    //                     minDist = dist;
-    //                 }
-    //             }
-    //             if(minDist < 1)
-    //             {
-    //                 SDL_RenderDrawPoint(renderer, x, y);
-    //             }
-            }
-            
-        }
-        
-    }*/
-    //std::cout << "Rendering To be Implemented\n";
     
 }
 
-ColourAtPixelCoords FindColourAtPixel(int x, int y, std::vector<Rigidbody*>* _objsArrayPointer)
+SceneRenderer::ColourAtPixelCoords SceneRenderer::FindColourAtPixel(const int x, const int y, const std::vector<Rigidbody*>* _objsArrayPointer)
 {
     ColourAtPixelCoords info;
     if(_objsArrayPointer->empty())

@@ -17,9 +17,9 @@
 class Engine
 {
     private:
-        SDL_Window* window = nullptr;
-        SDL_Renderer* renderer = nullptr;
-        SDL_Surface* surface = nullptr;
+        SDL_Window* window;
+        SDL_Renderer* renderer;
+        SDL_Surface* surface;
         bool running;
 
         SceneManager scene;
@@ -32,7 +32,7 @@ class Engine
         void Populate();
         void HandleEvents();
         void Update();
-        void Render();
+        void Render(float targetFramerate);
         inline bool isRunning() { return running; }
         void Kill();
 };

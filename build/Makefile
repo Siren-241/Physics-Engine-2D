@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sourceCode/Collision.o: sourceCode/Collision.cpp.o
+.PHONY : sourceCode/Collision.o
+
+# target to build an object file
+sourceCode/Collision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Collision.cpp.o
+.PHONY : sourceCode/Collision.cpp.o
+
+sourceCode/Collision.i: sourceCode/Collision.cpp.i
+.PHONY : sourceCode/Collision.i
+
+# target to preprocess a source file
+sourceCode/Collision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Collision.cpp.i
+.PHONY : sourceCode/Collision.cpp.i
+
+sourceCode/Collision.s: sourceCode/Collision.cpp.s
+.PHONY : sourceCode/Collision.s
+
+# target to generate assembly for a file
+sourceCode/Collision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Collision.cpp.s
+.PHONY : sourceCode/Collision.cpp.s
+
 sourceCode/Math2D.o: sourceCode/Math2D.cpp.o
 .PHONY : sourceCode/Math2D.o
 
@@ -176,6 +200,30 @@ sourceCode/Math2D.s: sourceCode/Math2D.cpp.s
 sourceCode/Math2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Math2D.cpp.s
 .PHONY : sourceCode/Math2D.cpp.s
+
+sourceCode/Renderer.o: sourceCode/Renderer.cpp.o
+.PHONY : sourceCode/Renderer.o
+
+# target to build an object file
+sourceCode/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Renderer.cpp.o
+.PHONY : sourceCode/Renderer.cpp.o
+
+sourceCode/Renderer.i: sourceCode/Renderer.cpp.i
+.PHONY : sourceCode/Renderer.i
+
+# target to preprocess a source file
+sourceCode/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Renderer.cpp.i
+.PHONY : sourceCode/Renderer.cpp.i
+
+sourceCode/Renderer.s: sourceCode/Renderer.cpp.s
+.PHONY : sourceCode/Renderer.s
+
+# target to generate assembly for a file
+sourceCode/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Renderer.cpp.s
+.PHONY : sourceCode/Renderer.cpp.s
 
 sourceCode/Rigidbody.o: sourceCode/Rigidbody.cpp.o
 .PHONY : sourceCode/Rigidbody.o
@@ -224,30 +272,6 @@ sourceCode/SceneManager.s: sourceCode/SceneManager.cpp.s
 sourceCode/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneManager.cpp.s
 .PHONY : sourceCode/SceneManager.cpp.s
-
-sourceCode/SceneUtils.o: sourceCode/SceneUtils.cpp.o
-.PHONY : sourceCode/SceneUtils.o
-
-# target to build an object file
-sourceCode/SceneUtils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.o
-.PHONY : sourceCode/SceneUtils.cpp.o
-
-sourceCode/SceneUtils.i: sourceCode/SceneUtils.cpp.i
-.PHONY : sourceCode/SceneUtils.i
-
-# target to preprocess a source file
-sourceCode/SceneUtils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.i
-.PHONY : sourceCode/SceneUtils.cpp.i
-
-sourceCode/SceneUtils.s: sourceCode/SceneUtils.cpp.s
-.PHONY : sourceCode/SceneUtils.s
-
-# target to generate assembly for a file
-sourceCode/SceneUtils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/SceneUtils.cpp.s
-.PHONY : sourceCode/SceneUtils.cpp.s
 
 sourceCode/engine.o: sourceCode/engine.cpp.o
 .PHONY : sourceCode/engine.o
@@ -333,18 +357,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sourceCode/Collision.o"
+	@echo "... sourceCode/Collision.i"
+	@echo "... sourceCode/Collision.s"
 	@echo "... sourceCode/Math2D.o"
 	@echo "... sourceCode/Math2D.i"
 	@echo "... sourceCode/Math2D.s"
+	@echo "... sourceCode/Renderer.o"
+	@echo "... sourceCode/Renderer.i"
+	@echo "... sourceCode/Renderer.s"
 	@echo "... sourceCode/Rigidbody.o"
 	@echo "... sourceCode/Rigidbody.i"
 	@echo "... sourceCode/Rigidbody.s"
 	@echo "... sourceCode/SceneManager.o"
 	@echo "... sourceCode/SceneManager.i"
 	@echo "... sourceCode/SceneManager.s"
-	@echo "... sourceCode/SceneUtils.o"
-	@echo "... sourceCode/SceneUtils.i"
-	@echo "... sourceCode/SceneUtils.s"
 	@echo "... sourceCode/engine.o"
 	@echo "... sourceCode/engine.i"
 	@echo "... sourceCode/engine.s"

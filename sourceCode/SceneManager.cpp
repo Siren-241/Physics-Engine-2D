@@ -11,7 +11,7 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init()
 {
-    objects_array.clear();
+    this->objects_array.clear();
 }
 
 void SceneManager::AddRigidbody(Rigidbody* obj)
@@ -21,16 +21,33 @@ void SceneManager::AddRigidbody(Rigidbody* obj)
 
 void SceneManager::Update()
 {
-    // CollisionHandler::HandleCollisions(&objects_array);
-    //std::cout << objects_array.size() << std::endl;
+    if (!objects_array.empty())
+    {
+        objects_array.at(0)->Move(Vec2(0.05, 0));
+    }
 
 }
 /**
  * TODO: Refactor this function
  */
-void SceneManager::Render(SDL_Window* window, SDL_Renderer* renderer, SDL_Surface* surface)
+void SceneManager::Render(SDL_Window* window, SDL_Renderer* renderer)
 {
-    RenderHandler::Render(window, renderer, surface, &objects_array);
+    SDL_SetRenderDrawColor(renderer, 0,0,0, 255);
+    SDL_RenderClear(renderer);
+
+    if (objects_array.empty())
+    {
+        SDL_RenderPresent(renderer);
+        return;
+    }
+    
+    for(const auto& obj : objects_array)
+    {
+        obj->draw(renderer);
+    }
+    
+    SDL_SetRenderDrawColor(renderer, 0,0,0, 255);
+    SDL_RenderPresent(renderer);
 }
 
 void SceneManager::clear()
@@ -44,13 +61,12 @@ void SceneManager::clear()
 
 
 /**
- *  ! DONT USE YET!
  * \param xpos x position of obj
  * \param ypos y position of obj
  * \param width width of Rect
  * \param height height of Rect
 */
-void SceneManager::Rect(int xpos, int ypos, float width, float height)
+void SceneManager::AddRect(int xpos, int ypos, float width, float height)
 {
     objects::Rect *r = new objects::Rect(xpos, ypos, width, height);
     AddRigidbody(r);
@@ -58,12 +74,11 @@ void SceneManager::Rect(int xpos, int ypos, float width, float height)
 }
 
 /**
- * ! DONT USE YET!
  * \param xpos x position of obj
  * \param ypos y position of obj
  * \param radius radius of circle
 */
-void SceneManager::Circle(int xpos, int ypos, float radius)
+void SceneManager::AddCircle(int xpos, int ypos, float radius)
 {
     objects::Circle* c = new objects::Circle(xpos, ypos, radius);
     AddRigidbody(c);

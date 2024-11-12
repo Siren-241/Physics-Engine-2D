@@ -320,17 +320,5 @@ CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o: \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/objects.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/utils.h \
  /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneManager.h \
- /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
- /usr/include/c++/13/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
- /usr/include/c++/13/bits/shared_ptr.h \
- /usr/include/c++/13/bits/shared_ptr_base.h \
- /usr/include/c++/13/bits/allocated_ptr.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/ext/concurrence.h \
- /usr/include/c++/13/bits/shared_ptr_atomic.h \
- /usr/include/c++/13/bits/atomic_base.h \
- /usr/include/c++/13/bits/atomic_lockfree_defines.h \
- /usr/include/c++/13/backward/auto_ptr.h \
- /usr/include/c++/13/pstl/glue_memory_defs.h \
- /home/saksham/Projects/Physics-Engine-2D/sourceCode/SceneUtils.h
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/Renderer.h \
+ /home/saksham/Projects/Physics-Engine-2D/sourceCode/Collision.h
