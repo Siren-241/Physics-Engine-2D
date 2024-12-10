@@ -34,9 +34,9 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
         {
             std::cout << "Window creation Failed...\n" << SDL_GetError() << '\n';
         }
-   
-        
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+
+        renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer != NULL)
         {
             SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255);
@@ -74,7 +74,7 @@ void Engine::Init(const char* title, int xpos, int ypos, int width, int height, 
 void Engine::Populate()
 {
     scene.AddRect(400, 300, 100, 100);
-    scene.AddCircle(50, 300, 100.0);
+    scene.AddCircle(150, 300, 100.0);
 }
 
 void Engine::Update()
@@ -83,16 +83,16 @@ void Engine::Update()
 }
 void Engine::Render(float targetFramerate)
 {
-    float desiredDelta = 1000.00/targetFramerate;
     Uint64 start = SDL_GetTicks64();
+    float desiredDelta = 1000.00/targetFramerate;
 
 
     if(SDL_RenderClear(renderer) < 0)
     {
-        std::cout << "Error : " << SDL_GetError() << '\n';
+        // std::cout << "Error : " << SDL_GetError() << '\n';
         return;
     }
-    scene.Render(window, renderer);
+    scene.Render(renderer);
  
     Uint64 delta = SDL_GetTicks64() - start;
 

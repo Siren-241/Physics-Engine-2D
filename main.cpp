@@ -10,7 +10,7 @@ int main()
 {
     int width = 1280, height = 720;
     Engine engine;
-    engine.Init("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
+    engine.Init("Physics 2D Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
     engine.Populate();
     
     //GameLoop

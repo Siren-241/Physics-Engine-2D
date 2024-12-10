@@ -6,7 +6,6 @@ SceneManager::SceneManager()
 SceneManager::~SceneManager()
 {
     this->clear();
-    std::cout << "Destructor has been called";
 }
 
 void SceneManager::Init()
@@ -23,14 +22,54 @@ void SceneManager::Update()
 {
     if (!objects_array.empty())
     {
-        objects_array.at(0)->Move(Vec2(0.05, 0));
+        using std::cout;
+        SDL_Event event;
+        SDL_PollEvent(&event);
+        Vec2 dir(0);
+        switch (event.type)
+        {
+            case SDL_KEYDOWN:
+                switch (event.key.keysym.sym)
+                {
+                    case SDLK_w:
+                        dir = dir + Vec2(0, -1);
+                        // cout<< "W" << '\n';
+                        break;
+                    
+                    case SDLK_a:
+                        dir = dir + Vec2(-1, 0);
+                        // cout<< "A" << '\n';
+                        break;
+                        
+                    case SDLK_s:
+                        dir = dir + Vec2(0,  1);
+                        // cout<< "S" << '\n';
+                        break;
+
+                    case SDLK_d:
+                        dir = dir + Vec2(1,  0);
+                        // cout<< "D" << '\n';
+                        break;
+                
+                    default:
+                        break;
+                }
+
+                break;
+            
+            default:
+                break;
+        }
+
+        dir.normalise();
+        objects_array.at(0)->Move( dir * 10.0 );
     }
 
 }
 /**
  * TODO: Refactor this function
  */
-void SceneManager::Render(SDL_Window* window, SDL_Renderer* renderer)
+void SceneManager::Render(SDL_Renderer* renderer)
 {
     SDL_SetRenderDrawColor(renderer, 0,0,0, 255);
     SDL_RenderClear(renderer);

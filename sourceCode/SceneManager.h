@@ -20,7 +20,7 @@ class SceneManager
 
         void Init();
         void Update();
-        void Render(SDL_Window* window, SDL_Renderer* renderer);
+        void Render(SDL_Renderer* renderer);
         void clear();
         // float sceneSDF(Vec2);
         
