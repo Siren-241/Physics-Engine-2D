@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sourceCode/Application.o: sourceCode/Application.cpp.o
+.PHONY : sourceCode/Application.o
+
+# target to build an object file
+sourceCode/Application.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Application.cpp.o
+.PHONY : sourceCode/Application.cpp.o
+
+sourceCode/Application.i: sourceCode/Application.cpp.i
+.PHONY : sourceCode/Application.i
+
+# target to preprocess a source file
+sourceCode/Application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Application.cpp.i
+.PHONY : sourceCode/Application.cpp.i
+
+sourceCode/Application.s: sourceCode/Application.cpp.s
+.PHONY : sourceCode/Application.s
+
+# target to generate assembly for a file
+sourceCode/Application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Physics_Engine.dir/build.make CMakeFiles/Physics_Engine.dir/sourceCode/Application.cpp.s
+.PHONY : sourceCode/Application.cpp.s
+
 sourceCode/Collision.o: sourceCode/Collision.cpp.o
 .PHONY : sourceCode/Collision.o
 
@@ -357,6 +381,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sourceCode/Application.o"
+	@echo "... sourceCode/Application.i"
+	@echo "... sourceCode/Application.s"
 	@echo "... sourceCode/Collision.o"
 	@echo "... sourceCode/Collision.i"
 	@echo "... sourceCode/Collision.s"

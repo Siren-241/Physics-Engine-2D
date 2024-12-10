@@ -1,26 +1,11 @@
-#include "sourceCode/engine.h"
-
-
-Vec2 findNormal(Vec2);
-float findDistance(Rigidbody*, Rigidbody*);
-void drawNormals(Vec2);
-
+#include "sourceCode/Application.h"
 
 int main()
 {
-    int width = 1280, height = 720;
-    Engine engine;
-    engine.Init("Physics 2D Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, false);
-    engine.Populate();
-    
-    //GameLoop
-    while (engine.isRunning())
-    {
-        engine.HandleEvents();
-        engine.Update();
-        engine.Render(60.00);
-    }
+    App app;
        
+    app.Init(1280, 720, "Test", false);
+    app.Run(60.00);
     
     return 0;
 }

@@ -14,7 +14,7 @@ add_executable(Physics_Engine
     sourceCode/Renderer.cpp
     sourceCode/Collision.cpp
     sourceCode/engine.cpp
-
+    sourceCode/Application.cpp
     )
 
 target_link_libraries(Physics_Engine ${SDL2_LIBRARIES})

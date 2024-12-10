@@ -52,5 +52,11 @@
   "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
   "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/engine.cpp",
   "output": "CMakeFiles/Physics_Engine.dir/sourceCode/engine.cpp.o"
+},
+{
+  "directory": "/home/saksham/Projects/Physics-Engine-2D/build",
+  "command": "/usr/bin/c++  -I/home/saksham/Projects/Physics-Engine-2D/SDL2Test -isystem /usr/include/SDL2 -g -o CMakeFiles/Physics_Engine.dir/sourceCode/Application.cpp.o -c /home/saksham/Projects/Physics-Engine-2D/sourceCode/Application.cpp",
+  "file": "/home/saksham/Projects/Physics-Engine-2D/sourceCode/Application.cpp",
+  "output": "CMakeFiles/Physics_Engine.dir/sourceCode/Application.cpp.o"
 }
 ]
